@@ -23,7 +23,6 @@ import javax.swing.JTextField;
 import javax.swing.TransferHandler;
 import javax.swing.border.TitledBorder;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import com.clementscode.mmi.swing.LabelAndField;
@@ -112,36 +111,6 @@ public class TriPanelCrud4 extends JFrame {
 		}
 	}
 
-	// private JPanel imageFilePanel() {
-	// JPanel panel = new JPanel();
-	// panel.setLayout(new GridLayout(0, 1));
-	// String dirName = "/Users/mgpayne/resources/";
-	//
-	// visitAllFiles(new File(dirName));
-	// int row = 0;
-	// lstImageSources = new ArrayList<DragableJLabelWithImage>();
-	// int n = 0;
-	// for (Object obj : vector) {
-	// ImageIcon ii = (ImageIcon) obj;
-	// // ExportDoneCallbackImageFilePanel cb = new
-	// // ExportDoneCallbackImageFilePanel(
-	// // lstTriPanels.get(n++));
-	// ExportDoneCallbackImageFilePanel edcifp = new
-	// ExportDoneCallbackImageFilePanel(
-	// null);
-	// ExportDoneCallback cb = (ExportDoneCallback) edcifp;
-	// DragableJLabelWithImage lbl = new DragableJLabelWithImage(cb);
-	// lbl.setIcon(ii);
-	// edcifp.setSource(row);
-	// lbl.setName(String.format("row=%d;%s", row++, ii.getDescription()));
-	// lstImageSources.add(lbl);
-	//
-	// panel.add(lbl);
-	// }
-	//
-	// return panel;
-	// }
-
 	// Process only files under dir
 	// Started with
 	// from http://www.exampledepot.com/egs/java.io/TraverseTree.html
@@ -194,38 +163,6 @@ public class TriPanelCrud4 extends JFrame {
 		return resizedImg;
 	}
 
-	// private JPanel tripleStimulusPanel() {
-	// JPanel panel = new JPanel();
-	//
-	// lstTriPanels = new ArrayList<JPanel>();
-	//
-	// panel.setLayout(new GridLayout(0, 1));
-	// for (int i = 0; i < 10; ++i) {
-	// JPanel triPanel = new JPanel();
-	// lstTriPanels.add(triPanel);
-	// TitledBorder title = BorderFactory.createTitledBorder("title");
-	// triPanel.setBorder(title);
-	// // triPanel.add(new LabelAndFieldWithIcon("Image: ",
-	// // new JTextField(20), this));
-	// // DragableJLabelWithImage lbl = new DragableJLabelWithImage(
-	// // new ExportDoneCallbackPanel(triPanel,
-	// // lstImageSources.get(i)));
-	//
-	// DragableJLabelWithImage lbl = new DragableJLabelWithImage(
-	// new ExportDoneCallbackPanel(triPanel, null));
-	// triPanel.add(lbl);
-	// String fn = "/Users/mgpayne/resources/people/plumber/Plumber3.jpg";
-	// ImageIcon smallIi = smallImageIcon(fn, 128, 128);
-	// lbl.setIcon(smallIi);
-	// lbl.setText("" + i);
-	// triPanel.add(new LabelAndField("Prompt: ", new JTextField(20)));
-	// triPanel.add(new LabelAndField("Answer: ", new JTextField(20)));
-	// panel.add(triPanel);
-	// }
-	//
-	// return panel;
-	// }
-
 	private JPanel soundFilePanel() {
 		JPanel panel = new JPanel();
 		panel.setLayout(new GridLayout(0, 1));
@@ -265,28 +202,4 @@ public class TriPanelCrud4 extends JFrame {
 		mainPanel.revalidate();
 		this.pack();
 	}
-
-	public void exportDone(String overWrittenComponent, JComponent source) {
-		int n = 0;
-		// TODO: Parse source to get the row and do the correct stuff...
-
-		String str = source.getName();
-		String[] lst = StringUtils.split(str, ";");
-		String rowStr = lst[0];
-		rowStr = rowStr.substring("row=".length());
-
-		// rowStr = overWrittenComponent;
-		n = Integer.parseInt(rowStr);
-		// TODO: Fix bad logic! Need to get row of the drop site!
-		JPanel p = lstTriPanels.get(n);
-		TitledBorder title = BorderFactory.createTitledBorder(str);
-		p.setBorder(title);
-
-	}
-
-	public void importData(JComponent comp) {
-		// TODO Auto-generated method stub
-
-	}
-
 }
