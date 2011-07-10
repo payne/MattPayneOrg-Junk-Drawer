@@ -4,5 +4,5 @@ http://www.vogella.de/articles/JavaPersistenceAPI/article.html
 and
 http://www.antoniogoncalves.org/xwiki/bin/view/Article/TestingJPA#HJPA20andEclipseLink
 
-Trying to get things working with maven...
+For Vogella's tutorial switched from derby to h2 and used maven for things.
 

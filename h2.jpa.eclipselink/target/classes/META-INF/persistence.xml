@@ -13,15 +13,16 @@
 				 -->
 				
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:h2:~/simpleDb" />	
+				value="jdbc:h2:tcp://localhost/~/test" />	
 				
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 
-			<!-- EclipseLink should create the database schema automatically -->
+			<!-- EclipseLink should create the database schema automatically 
 			<property name="eclipselink.ddl-generation" value="create-tables" />
 			<property name="eclipselink.ddl-generation.output-mode"
 				value="database" />
+				-->
 		</properties>
 
 	</persistence-unit>
@@ -34,8 +35,15 @@
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<!-- 
 				<property name="javax.persistence.jdbc.url"
 				value="jdbc:h2:~/relationsshipDb;create=true" />
+				 -->
+				 
+				
+			<property name="javax.persistence.jdbc.url"
+				value="jdbc:h2:tcp://localhost/~/test" />	
+					 
 			<property name="javax.persistence.jdbc.user" value="sa" />
 			<property name="javax.persistence.jdbc.password" value="" />
 
