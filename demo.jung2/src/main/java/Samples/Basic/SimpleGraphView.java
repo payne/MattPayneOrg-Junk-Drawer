@@ -1,6 +1,6 @@
 // Start with http://www.grotto-networking.com/JUNG/JUNG2-Tutorial.pdf
 
-package org.mattpayne.demo.jung2;
+package Samples.Basic;
 
 import java.awt.Dimension;
 
